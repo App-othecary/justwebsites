@@ -1,17 +1,9 @@
-import Image from "next/image";
 
-export default function Home() {
-  return (
-     <main className="flex h-screen w-screen items-center justify-center bg-black">
-     <picture>
-        <source media="(min-width: 1024px)" srcSet="/under-construction-desktop.png" />
-        <source media="(min-width: 640px)" srcSet="/under-construction-tablet.png" />
-        <img
-          src="/under-construction-mobile.png"
-          alt="Site under construction"
-          className="h-full w-full object-contain"
-        />
-      </picture>
-    </main>
-  );
+import UnderConstruction from "./components/UnderConstruction";
+import HomePage from "./components/HomePage";
+
+export default function Page() {
+  const isUnderConstruction = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
+
+  return isUnderConstruction ? <UnderConstruction /> : <HomePage />;
 }
