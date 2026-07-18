@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
 const inter = Inter({
 
@@ -25,7 +26,8 @@ export default function RootLayout({
       <body className={inter.className}  data-theme="dark">
         <div className="bg-blue-100 absolute -top-6rem -z-10 -right-44 w-120 h-120 rounded-full blur-[10rem] sm:w-120"></div>
         <div className="bg-red-100 absolute top-1/3 -z-10 -left-44 w-120 h-120 rounded-full blur-[10rem]"></div>
-<div></div>
+
+      <Header />
 
       {children}</body>
     </html>
