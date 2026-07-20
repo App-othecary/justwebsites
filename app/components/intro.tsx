@@ -1,7 +1,10 @@
 "use client";
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Bs0Circle } from 'react-icons/bs';
+
 
 export default function Intro() {
   return (
@@ -25,6 +28,11 @@ export default function Intro() {
                 <p>We design, build and maintain simple, clean websites, so that you can focus on your business.
                 </p>
             </div>
+        </div>
+        <div>
+            <Link href="/contact" className="flex justify-center mt-4"> 
+                Get in Touch
+            </Link>
         </div>
 
     </section>
