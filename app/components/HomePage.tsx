@@ -1,6 +1,7 @@
 import Header from './Header';
 import Intro from './intro';
 import SectionDivider from './section-divider';
+import Services from './services';
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <Header />
       <Intro />
       <SectionDivider />
+      <Services />
       {/* build your real homepage here, piece by piece */}
     </main>
   );
