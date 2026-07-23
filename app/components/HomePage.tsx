@@ -1,5 +1,6 @@
 import Header from './Header';
 import Intro from './intro';
+import Projects from './projects';
 import SectionDivider from './section-divider';
 import Services from './services';
 
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Intro />
       <SectionDivider />
       <Services />
+      <Projects />
       {/* build your real homepage here, piece by piece */}
     </main>
   );
