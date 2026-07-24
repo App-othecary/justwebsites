@@ -7,14 +7,15 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className=" fixed top-1 z-999 flex w-full flex-wrap items-center justify-center 
-    opacity:50 backdrop-blur-md transition-all duration-300  sm:top-1.7rem
+    opacity:20 backdrop-blur-md transition-all duration-300  sm:top-1.7rem
     sm:h:1.7rem ">
       <motion.div
-        className="flex items-center justify-center top-12 h-12 w-full 
+        className="flex flex-wrap items-center justify-center top-12 h-12 w-full 
          rounded-none 
          translate-x-1/2 border border-black/10  border-opacity-40 
-         bg-white  bg-opacity-80 shadow-lg  shadow-gray             
-        sm:h:3.25rem   sm:w:36rem   sm:rounded-full
+         bg-white  bg-opacity-50 shadow-lg  shadow-gray             
+        sm:h:3.25rem   sm:w:36rem   sm:rounded-full sm:opacity-30 sm:backdrop-blur-md
+     
           dark:bg-gray-950 
           dark:border-black/40 
           dark:bg-opacity-75"
@@ -25,7 +26,7 @@ export default function Header() {
       <nav className=" fixed top-0 left-1/2 -translate-x-1/2 flex items-center h-12 py-2sm:top-[1.7rem]">
         <ul
           className="flex w:2rem flex-wrap items-center justify-center 
-        gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5"
+        gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-4"
         >
           {links.map((link) => (
             <motion.li
