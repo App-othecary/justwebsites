@@ -34,7 +34,7 @@ export default function Project({
           <p className="mt-2 leading-relaxed">{description}</p>
           <ul className="flex flex-wrap gap-2 mt-4 ">
             {tags.map((tag, index) => (
-              <li
+              <li           // this lists the techstack items
                 key={index}
                 className="inline-block mr-2 rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700 mb-2"
               >
