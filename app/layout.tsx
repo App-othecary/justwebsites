@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth!">
       <body className={inter.className} data-theme="dark">
         <section  className="flex flex-col justify-center ">
         <div className="bg-blue-100 absolute -top-6rem -z-10 -right-44 w-120 h-120 rounded-full blur-[10rem] sm:w-120"></div>

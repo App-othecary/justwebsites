@@ -6,7 +6,7 @@ import Project from "./project-card";
 
 export default function Projects() {
   return (
-    <section>
+    <section id="projects" className="scroll-mt-28">
       <SectionHeading>Our Projects</SectionHeading>
       <div>
         {projectsData.map((project, index) => (

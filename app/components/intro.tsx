@@ -8,7 +8,14 @@ import { FaArrowRight } from 'react-icons/fa';
 
 export default function Intro() {
   return (
-    <section>
+    <motion.section className="mb-28 max-w-180 text-center leading-8 
+    sm:mb-40
+    scroll-mt-36"
+    initial={{ opacity: 0, y: 100 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{delay: 0.175}}
+    id="home"
+    >
       <div className=" justify-center">
         <div className="flex justify-center">
           <motion.div
@@ -22,7 +29,7 @@ export default function Intro() {
               height={400}
               quality={95}
               priority={true}
-              className="rounded-lg shadow-lg mt-1  md:mt-4 :mt-10"
+              className="rounded-lg shadow-lg mt-26"
             />
           </motion.div>
         </div>
@@ -65,6 +72,6 @@ export default function Intro() {
           <HiDownload className="opacity:60 translate-y-1 group-hover:translate-y-1.5" />
         </a>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }
