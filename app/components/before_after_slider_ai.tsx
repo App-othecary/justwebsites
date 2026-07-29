@@ -12,6 +12,7 @@ interface Props {
     initialPosition?: number;
 }
 
+
 export default function BeforeAfterSlider({
     before,
     after,

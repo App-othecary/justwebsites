@@ -1,15 +1,21 @@
 "use client";
-import React from 'react'
+
 import SectionHeading from './section-heading'
-import { motion } from 'framer-motion'
+import { motion, } from 'framer-motion'
+import { useSectionInview } from '@/lib/hooks';
 
 export default function Services() {
+  const {ref} =useSectionInview('Services');
+
   return (
-    <motion.section className="mb-28 max-w-180 text-center leading-8 sm:mb-40 scroll-mt-26"
+    <motion.section 
+    ref={ref}
+    className="mb-28 max-w-180 text-center leading-8 sm:mb-40 scroll-mt-26"
     initial={{ opacity: 0, y: 100 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{delay: 0.175}}
     id="services"
+    
     >
       <SectionHeading>Our Services</SectionHeading>
       <p className='text-center max-w:45rem mb-4'>

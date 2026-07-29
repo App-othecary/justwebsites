@@ -5,8 +5,26 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { HiDownload } from 'react-icons/hi';
 import { FaArrowRight } from 'react-icons/fa';
+import {useActiveSectionContext} from "@/app/components/context/active-section-context";
+import {useInView} from "react-intersection-observer";
+import {useEffect} from "react";
+
 
 export default function Intro() {
+   const {ref,inView }=useInView({
+  threshold:0.5,
+ });
+ const{ setActiveSection, timeOfLastClick }=useActiveSectionContext();
+
+ useEffect(()=>{
+  if(inView && Date.now() - timeOfLastClick > 1000  && !inView){
+    setActiveSection("Home");
+  }
+ },[inView, setActiveSection]);
+
+if (inView){
+  setActiveSection("Home");
+}
   return (
     <motion.section className="mb-28 max-w-180 text-center leading-8 
     sm:mb-40

@@ -1,12 +1,15 @@
 "use client";
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
+import { useActiveSectionContext } from "./context/active-section-context";
+
 
 export default function Header() {
-  const[activeSection, setActiveSection] = useState('Home');
+  const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionContext();
+  
   return (
     <header className=" fixed z-999 flex w-full flex-wrap items-center justify-center 
     opacity:20 h-24
@@ -43,17 +46,24 @@ export default function Header() {
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
-              <Link className={clsx("flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
+              <Link className={clsx(
+                "flex w-full items-center justify-center px-3 py-3  hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
                  {
                    "text-gray-950 dark:text-gray-300": activeSection === link.name,
                   }
                 )
 }
                 href={link.hash}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {setActiveSection(link.name)
+                  setTimeOfLastClick(Date.now());
+                }
+              }
               >
                 {link.name}
-                <motion.span className="bg-taupe-200 rounded-full absolute inset-0 -z-10 transition-all duration-300 dark:bg-gray-900 h-10"></motion.span>
+                <motion.span 
+                className="bg-mist-100 rounded-full absolute inset-0 -z-10 transition-all duration-300 dark:bg-gray-900 h-10"
+                layoutId="activeSection"
+                transition={{type:"spring", stiffness: 380, damping: 30}} ></motion.span>
               </Link>
             </motion.li>
           ))}
