@@ -4,20 +4,47 @@ import { motion } from 'framer-motion';
 import { useSectionInview } from '@/lib/hooks';
 import SectionHeading from './section-heading';
 import { FaPaperPlane } from 'react-icons/fa';
-// import { sendEmail } from '@/actions/sendEmail';
+import { sendEmail } from '@/actions/sendEmail';
 
 export default function Contact() {
   const { ref } = useSectionInview('Contact', 0.5);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus('loading');
+    setMessage('');
+
+    try {
+      console.log(
+        'Running on ClientSide',
+        formData.get('senderEmail'),
+        formData.get('message')
+      );
+
+      await sendEmail(formData);
+
+      setStatus('success');
+      setMessage('Thanks! Your message has been submitted.');
+      form.reset();
+    } catch (error) {
+      console.error('Failed to submit contact form', error);
+      setStatus('error');
+      setMessage('Something went wrong. Please try again.');
+    }
+  };
+
   return (
     <motion.section
       ref={ref}
       id="contact"
       className="mb-20 sm:mb-28 w-[min(42rem,100%)] text-center leading-8 scroll-mt-26"
-      initial={{ opacity: 0, }}
-      whileInView={{ opacity: 1, }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
@@ -31,29 +58,10 @@ export default function Contact() {
       </p>
 
       <form
-         className="mt-8 flex flex-col gap-4
-         borderBlack rounded-lg border-2 p-6 shadow-md "
-        // onSubmit={async (event) => {
-        //   event.preventDefault();
-        //   const form = event.currentTarget;
-        //   const formData = new FormData(form);
-
-        //   setStatus('loading');
-        //   setMessage('');
-
-        //  const result = await sendEmail(formData);
-
-        //   if (result?.success) {
-        //     setStatus('success');
-        //     setMessage('Thanks! Your message has been sent.');
-        //     form.reset();
-        //   } else {
-        //     setStatus('error');
-        //     setMessage(result?.error || 'Something went wrong. Please try again.');
-        //   }
-        // }}
+        onSubmit={handleSubmit}
+        className="mt-8 flex flex-col gap-4
+        borderBlack rounded-lg border-2 p-6 shadow-md"
       >
-
         <input
           className="h-14 px-4 rounded-lg borderBlack bg-taupe-100  dark:bg-neutral-700"
           type="email"
