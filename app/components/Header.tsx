@@ -17,9 +17,9 @@ export default function Header() {
     sm:top-1.7rem
     sm:h:1rem ">
       <motion.div
-        className="flex flex-wrap items-center justify-center top-12 h-12 w-full 
+        className="flex flex-wrap items-center justify-center top-12 h-12 w-[min(48rem,100%)]
          rounded-none 
-         translate-x-1/2 border border-black/10  border-opacity-40 
+         translate-x-1/2 borderBlack border-opacity-40 
           bg-opacity-50 shadow-lg  shadow-gray  backdrop-blur-md           
           sm:h:3.25rem 
           sm:w:36rem

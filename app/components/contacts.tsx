@@ -15,7 +15,7 @@ export default function Contact() {
     <motion.section
       ref={ref}
       id="contact"
-      className="mb-20 sm:mb-28 w-[min(38rem,100%)] text-center leading-8 scroll-mt-26"
+      className="mb-20 sm:mb-28 w-[min(42rem,100%)] text-center leading-8 scroll-mt-26"
       initial={{ opacity: 0, }}
       whileInView={{ opacity: 1, }}
       transition={{ duration: 1 }}
@@ -31,7 +31,7 @@ export default function Contact() {
       </p>
 
       <form
-         className="mt-10 flex flex-col gap-4
+         className="mt-8 flex flex-col gap-4
          borderBlack rounded-lg border-2 p-6 shadow-md "
         // onSubmit={async (event) => {
         //   event.preventDefault();

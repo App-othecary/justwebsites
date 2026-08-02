@@ -61,7 +61,7 @@ if (inView){
       justify-center gap-2 mt-4 px-4 md:mt-6"
       >
         <Link
-          href="/contact"
+          href="#contact"
           className="flex group justify-center wrap
            bg-mauve-900  hover:bg-mauve-700 text-white 
            hover:scale-105
