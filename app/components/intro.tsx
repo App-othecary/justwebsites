@@ -2,13 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { HiDownload } from 'react-icons/hi';
 import { FaArrowRight } from 'react-icons/fa';
 import {useActiveSectionContext} from "@/app/components/context/active-section-context";
 import {useInView} from "react-intersection-observer";
 import {useEffect} from "react";
-
 
 export default function Intro() {
    const {ref,inView }=useInView({
@@ -26,20 +24,15 @@ if (inView){
   setActiveSection("Home");
 }
   return (
-    <motion.section className="mb-28 max-w-180 text-center leading-8 
+    <section className="mb-28 max-w-180 text-center leading-8 
     sm:mb-40
     scroll-mt-36"
-    initial={{ opacity: 0, y: 100 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{delay: 0.175}}
     id="home"
+    ref={ref}
     >
       <div className=" justify-center">
         <div className="flex justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
+          <div>
             <Image
               src="/intro-image.png"
               alt="Intro Image"
@@ -49,7 +42,7 @@ if (inView){
               priority={true}
               className="rounded-lg shadow-lg mt-26"
             />
-          </motion.div>
+          </div>
         </div>
 
         <div className="text-center text-lg mt-4">
@@ -63,12 +56,9 @@ if (inView){
           </p>
         </div>
       </div>
-      <motion.div
+      <div
         className="flex flex-col sm:flex-row 
       justify-center gap-2 mt-4 px-4 md:mt-6"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
       >
         <Link
           href="/contact"
@@ -89,7 +79,7 @@ if (inView){
           Download Pricelist
           <HiDownload className="opacity:60 translate-y-1 group-hover:translate-y-1.5" />
         </a>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }

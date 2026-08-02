@@ -7,3 +7,7 @@
      text-stone-950 dark:bg-gray-900 dark:text-white;
   }
 }
+
+.borderBlack {
+  @apply border border-black/10;
+}

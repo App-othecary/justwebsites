@@ -5,6 +5,7 @@ import Intro from './intro';
 import Projects from './projects';
 import SectionDivider from './section-divider';
 import Services from './services';
+import Contacts from './contacts';
 
 
 export default function HomePage({children}: {children: React.ReactNode}) {
@@ -18,7 +19,7 @@ export default function HomePage({children}: {children: React.ReactNode}) {
         <SectionDivider />
         <Services />
         <Projects />
-        {/* build your real homepage here, piece by piece */}
+        <Contacts />
       </ActiveSectionContextProvider>
     </main>
   );
