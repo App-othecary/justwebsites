@@ -2,7 +2,11 @@
 
 @tailwind utilities;
 @layer base {
-  html {
+  html,
+  body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
     @apply bg-stone-100
      text-stone-950 dark:bg-gray-900 dark:text-white;
   }

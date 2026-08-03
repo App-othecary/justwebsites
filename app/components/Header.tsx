@@ -11,7 +11,7 @@ export default function Header() {
   const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionContext();
   
   return (
-    <header className=" fixed z-999 flex w-full flex-wrap items-center justify-center 
+    <header className=" fixed  top-0 left-0 right-0 z-999 w-full flex  flex-wrap items-center justify-center 
     opacity:20 h-24
     transition-all duration-300  
     sm:top-1.7rem

@@ -12,7 +12,7 @@ export default function Projects() {
   const {ref}=useSectionInview('Projects',0.5);
 
   return (
-    <motion.section ref={ref} id="projects" className="scroll-mt-28">
+    <motion.section ref={ref} id="projects" className="w-full max-w-full overflow-hiddenscroll-mt-28">
       <SectionHeading>Our Projects</SectionHeading>
       <div>
         {projectsData.map((project, index) => (
