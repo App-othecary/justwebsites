@@ -28,8 +28,13 @@ export default function Project({
       }}
       className=" group mb-8 sm:mb-12"
     >
-      <section className="max-w-2xl mx-auto p-4 border-black/5 overflow-hidden  sm:pr-8 relative sm:h-80 rounded-lg shadow-md hover:bg-mauve-200 transition group-even:pl-8">
-        <div className="pt-4 pb-7 px-5 sm:pl-8 sm:pr-2 sm:pt-10 sm:max-w-1/2 flex flex-col h-full group-even:ml-80">
+      <section className="max-w-2xl mx-auto p-4 border-black/5 overflow-hidden  
+      sm:pr-8 flex flex-col sm:block relative sm:h-80 rounded-lg 
+      shadow-md hover:bg-mauve-200 transition sm:group-even:pl-8">
+        <div className="pt-4 pb-7 px-5 sm:pl-8 sm:pr-2 sm:pt-10 
+        max-w-none sm:max-w-1/2 flex flex-col 
+        h-auto sm:h-full
+         sm:group-even:ml-80">
           <h3 className="text-2xl font-semibold ">{title}</h3>
           <p className="mt-2 leading-relaxed">{description}</p>
           <ul className="flex flex-wrap gap-2 mt-4 ">
@@ -47,7 +52,12 @@ export default function Project({
           src={imageUrl}
           alt={title}
           quality={95}
-          className="absolute top-24 -right-5 w-1/2 width-1/2 object-cover mt-8 sm:top-0  rounded-t-lg group-even:right-[initial] group-even:-left-5 
+          className="relative sm:absolute 
+          order-first sm:order-0 
+          w-full sm:w-1/2 object-cover mt-8  
+          top-0 sm:top-0 
+          right-0 sm:-right-5 
+          rounded-t-lg group-even:right-[initial] group-even:-left-5 
         transition group-hover:scale-105 group-hover:transition-all 
         group-hover:translate-x-3 group-hover:-translate-y-3 group-hover:-rotate-2
         group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2

@@ -18,7 +18,7 @@ export default function Pricing() {
       
       <p className='text-center max-w:45rem mb-4'>
        Weather you're just getting started or need a website to grow with your business.</p>
-        <p className='text-center max-w:45rem mb-4'>We've got you</p>
+        <p className='text-center max-w:45rem mb-4'>We've got you covered.</p>
                 <div className="flex justify-center">
                   <div>
                     <Image
