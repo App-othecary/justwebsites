@@ -75,23 +75,25 @@ export default function Contact() {
           placeholder="Message"
           name="message"
           required
-          maxLength={500}
-        />
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="group flex items-center justify-center 
-          gap-2 rounded-full w-32 h-12
-           bg-taupe-300
-            text-taupe-900
-             hover:text-amber-950
-              hover:bg-mauve-300 
-              hover:scale-105
-disabled:opacity-70"
-        >
-          {status === 'loading' ? 'Sending...' : 'Send'}
-          <FaPaperPlane className="transition opacity-70 group-hover:translate-x-1 group-hover:-translate-y-1" />
-        </button>
+          maxLength={5000}
+        /><div className="flex justify-end">
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="group flex  items-center justify-center 
+            gap-2 rounded-full w-32 h-12
+            bg-taupe-300
+              text-taupe-900
+              hover:text-amber-950
+                hover:bg-mauve-300 
+                hover:scale-105
+  disabled:opacity-70"
+          >
+            {status === 'loading' ? 'Sending...' : 'Send'}
+            <FaPaperPlane className="transition opacity-70 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </button>
+        </div >
+  
 
         {message ? (
           <p className={status === 'success' ? 'text-green-700' : 'text-red-600'}>{message}</p>
