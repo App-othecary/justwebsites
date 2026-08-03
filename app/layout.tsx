@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 import { Analytics } from "@vercel/analytics/next"
+import WhatsAppChat from './components/WhatsAppChat';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <div className="bg-red-100 absolute top-1/3 -z-10 -left-44 w-120 h-120 rounded-full blur-[10rem]"></div>
 
         {children}
+        <WhatsAppChat />
         </section>
       </body>
     </html>

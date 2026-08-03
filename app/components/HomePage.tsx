@@ -6,6 +6,7 @@ import Projects from './projects';
 import SectionDivider from './section-divider';
 import Services from './services';
 import Contacts from './contacts';
+import Pricing from './pricing';
 
 
 export default function HomePage({children}: {children: React.ReactNode}) {
@@ -16,8 +17,9 @@ export default function HomePage({children}: {children: React.ReactNode}) {
         {children}
         {/* <BeforeAfterSlider/> */}
         <Intro />
-        <SectionDivider />
+     
         <Services />
+        <Pricing />
         <Projects />
         <Contacts />
       </ActiveSectionContextProvider>
