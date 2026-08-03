@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth!">
-      <body className={inter.className} data-theme="dark">
+      <body className={inter.className + ' overflow-x-hidden'} data-theme="dark">
         <section  className="flex flex-col justify-center ">
         <div className="bg-blue-100 absolute -top-6rem -z-10 -right-44 w-120 h-120 rounded-full blur-[10rem] sm:w-120"></div>
         <div className="bg-red-100 absolute top-1/3 -z-10 -left-44 w-120 h-120 rounded-full blur-[10rem]"></div>
