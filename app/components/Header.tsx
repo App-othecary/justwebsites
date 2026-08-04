@@ -1,22 +1,21 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "./context/active-section-context";
-import { HiMenu } from 'react-icons/hi';
-
+import { HiMenu } from "react-icons/hi";
 
 export default function Header() {
-  const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionContext();
-  
+  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const closeDrawer = () => setIsDrawerOpen(false);
+
   return (
-    <header className=" fixed  top-0 left-0 right-0 z-999 w-full flex  flex-wrap items-center justify-center 
-    opacity-100 h-24
-    transition-all duration-300  
-    sm:top-1.7rem
-    sm:h:1rem ">
+    <header className="fixed top-0 left-0 right-0 z-[999] flex h-24 w-full flex-wrap items-center justify-center opacity-100 transition-all duration-300 sm:top-1.7rem sm:h-4">
+
       <motion.div
         className="flex flex-wrap items-center justify-center top-12 h-12 w-[min(48rem,100%)]
          rounded-none 
@@ -36,12 +35,63 @@ export default function Header() {
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
-<button className="fixed top-8 right-6  p-2 scale-135 rounded-md shadow-md sm:hidden" id="drawer-btn">
-          <HiMenu />
-        </button>
-      <nav className=" fixed top-8 left-1/2 -translate-x-1/2 items-center 
-      hidden sm:flex
-      h-12 py-2 sm:top-[1.7rem]">
+      <button
+        type="button"
+        onClick={() => setIsDrawerOpen((prev) => !prev)}
+        className="fixed right-6 top-8 z-[60] rounded-md p-2 text-2xl shadow-md sm:hidden"
+        id="drawer-btn"
+        aria-label="Open navigation menu"
+      >
+        <HiMenu />
+      </button>
+
+      <AnimatePresence>
+        {isDrawerOpen ? (
+          <>
+            <motion.button
+              type="button"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeDrawer}
+              className="fixed inset-0 z-40 bg-black/40 sm:hidden"
+              aria-label="Close navigation menu"
+            />
+            <motion.nav
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 260, damping: 25 }}
+              className="fixed right-0 top-0 z-50 h-full w-64 bg-white/95 p-6 pt-20 shadow-xl sm:hidden dark:bg-gray-950/95"
+            >
+              <ul className="flex flex-col gap-3 text-lg font-medium text-gray-700 dark:text-gray-200">
+                {links.map((link) => (
+                  <li key={link.hash}>
+                    <Link
+                      href={link.hash}
+                      onClick={() => {
+                        setActiveSection(link.name);
+                        setTimeOfLastClick(Date.now());
+                        closeDrawer();
+                      }}
+                      className={clsx(
+                        "block rounded-lg px-3 py-2 transition hover:bg-gray-100 hover:text-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+                        {
+                          "text-gray-950 dark:text-gray-300": activeSection === link.name,
+                        }
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.nav>
+          </>
+        ) : null}
+      </AnimatePresence>
+
+      <nav className="fixed left-1/2 top-8 hidden h-12 -translate-x-1/2 items-center py-2 sm:flex sm:top-[1.7rem]">
 
         
         <ul
