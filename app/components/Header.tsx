@@ -40,7 +40,7 @@ export default function Header() {
       <button
         type="button"
         onClick={() => setIsDrawerOpen((prev) => !prev)}
-        className="fixed right-6 top-8 z-[60] rounded-md p-2 text-2xl shadow-md sm:hidden"
+        className="fixed right-6 z-[60] rounded-md p-2 text-2xl shadow-md sm:hidden"
         id="drawer-btn"
         aria-label="Open navigation menu"
       >
