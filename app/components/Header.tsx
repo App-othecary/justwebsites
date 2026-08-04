@@ -14,10 +14,12 @@ export default function Header() {
   const closeDrawer = () => setIsDrawerOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[999] flex h-24 w-full flex-wrap items-center justify-center opacity-100 transition-all duration-300 sm:top-1.7rem sm:h-4">
+    <header className="fixed top-0 left-0 right-0 z-[999] 
+    flex h-24 w-full flex-wrap items-center justify-center 
+    dark:bg-opacity-50 transition-all duration-300 sm:top-1.7rem sm:h-4">
 
       <motion.div
-        className="flex flex-wrap items-center justify-center top-12 h-12 w-[min(48rem,100%)]
+        className="flex flex-wrap items-center justify-center fixed top-6 h-12 w-[min(48rem,100%)]
          rounded-none 
          translate-x-1/2 borderBlack border-opacity-40 
           bg-opacity-50 shadow-lg  shadow-gray  backdrop-blur-md     
@@ -30,7 +32,7 @@ export default function Header() {
      
           dark:bg-gray-950 
           dark:border-black/40 
-          dark:opacity-30
+          dark:bg-opacity-50
           "
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
