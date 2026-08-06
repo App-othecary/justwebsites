@@ -14,7 +14,7 @@ export default function Header() {
   const closeDrawer = () => setIsDrawerOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[999] 
+    <header className="fixed top-0 left-0 right-0 z-999 
     flex h-24 w-full flex-wrap items-center justify-center 
     dark:bg-opacity-50 transition-all duration-300 sm:top-1.7rem sm:h-4">
       
