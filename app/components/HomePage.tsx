@@ -16,10 +16,13 @@ export default function HomePage({children}: {children: React.ReactNode}) {
         <Header />
         {children}
         {/* <BeforeAfterSlider/> */}
+        <Pricing />
         <Intro />
      
         <Services />
-        <Pricing />
+        
+
+
         <Projects />
         <Contacts />
       </ActiveSectionContextProvider>

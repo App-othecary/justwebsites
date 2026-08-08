@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import bookmark_page_banner from "@/public/bookmark_page_banner.png"; 
 import HD_Precision from "@/public/HD_Precision.png";
 import stocklist_desktop from "@/public/stocklist_desktop.png";
+import rocket from "@/public/Rocket.svg";
 
 export const links = [
   {
@@ -105,3 +106,33 @@ export const skillsData = [
   "Django",
   "Framer Motion",
 ] as const;
+
+export const pricingData = [
+  {
+    title: "Starter Website",
+    description:
+      "I created a service where users could buy and sell their used books, by looking at a users purchase habbits we could then suggestion bookclub friends",
+         tags: ["React", "Next.js", "Firebase", "Tailwind", "Vercel", "Github"],
+    imageUrl: bookmark_page_banner,
+  },
+  {
+    title: "Business Website",
+    description:
+      "An online shop where clients can order precision cut metal parts for their projects.",
+    tags: ["Figma", "React", "TypeScript", "Next.js", "Tailwind", ],
+    imageUrl: HD_Precision,
+  },
+  {
+    title: "Additional Pages",
+    description:
+      "An App for sales staff to track inventory live and share information with managers.",
+    tags: ["Firebase", "Flutter", "Dart", "VS Code",],
+    imageUrl: stocklist_desktop,
+  },{
+    title: "Optional Extras",
+    description:
+      "An App for sales staff to track inventory live and share information with managers.",
+    tags: ["Firebase", "Flutter", "Dart", "VS Code",],
+    imageUrl: stocklist_desktop,
+  },
+ ] as const;
