@@ -15,3 +15,7 @@
 .borderBlack {
   @apply border border-black/10;
 }
+
+.cardPrimaryColor {
+  @apply bg-slate-800;
+}
