@@ -1,40 +1,42 @@
-'use client';
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useSectionInview } from '@/lib/hooks';
-import SectionHeading from './section-heading';
-import { FaPaperPlane } from 'react-icons/fa';
-import { sendEmail } from '@/actions/sendEmail';
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useSectionInview } from "@/lib/hooks";
+import SectionHeading from "./section-heading";
+import { FaPaperPlane } from "react-icons/fa";
+import { sendEmail } from "@/actions/sendEmail";
 
 export default function Contact() {
-  const { ref } = useSectionInview('Contact', 0.5);
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
+  const { ref } = useSectionInview("Contact", 0.5);
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    setStatus('loading');
-    setMessage('');
+    setStatus("loading");
+    setMessage("");
 
     try {
       console.log(
-        'Running on ClientSide',
-        formData.get('senderEmail'),
-        formData.get('message')
+        "Running on ClientSide",
+        formData.get("senderEmail"),
+        formData.get("message"),
       );
 
       await sendEmail(formData);
 
-      setStatus('success');
-      setMessage('Thanks! Your message has been submitted.');
+      setStatus("success");
+      setMessage("Thanks! Your message has been submitted.");
       form.reset();
     } catch (error) {
-      console.error('Failed to submit contact form', error);
-      setStatus('error');
-      setMessage('Something went wrong. Please try again.');
+      console.error("Failed to submit contact form", error);
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
     }
   };
 
@@ -51,7 +53,7 @@ export default function Contact() {
       <SectionHeading>Contact Us</SectionHeading>
 
       <p className="mb-6 text-gray-700 dark:text-gray-300">
-        For more information, email{' '}
+        For more information, email{" "}
         <a href="mailto: emilyreyndersdesigns@gmail.com" className="underline">
           emilyreyndersdesigns@gmail.com
         </a>
@@ -76,10 +78,11 @@ export default function Contact() {
           name="message"
           required
           maxLength={5000}
-        /><div className="flex justify-end">
+        />
+        <div className="flex justify-end">
           <button
             type="submit"
-            disabled={status === 'loading'}
+            disabled={status === "loading"}
             className="group flex  items-center justify-center 
             gap-2 rounded-full w-32 h-12
             bg-taupe-300
@@ -89,17 +92,19 @@ export default function Contact() {
                 hover:scale-105
   disabled:opacity-70"
           >
-            {status === 'loading' ? 'Sending...' : 'Send'}
+            {status === "loading" ? "Sending..." : "Send"}
             <FaPaperPlane className="transition opacity-70 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </button>
-        </div >
-  
+        </div>
 
         {message ? (
-          <p className={status === 'success' ? 'text-green-700' : 'text-red-600'}>{message}</p>
+          <p
+            className={status === "success" ? "text-green-700" : "text-red-600"}
+          >
+            {message}
+          </p>
         ) : null}
       </form>
     </motion.section>
   );
 }
-
