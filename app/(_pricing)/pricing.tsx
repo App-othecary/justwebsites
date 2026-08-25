@@ -65,7 +65,7 @@ export default function Pricing() {
 
         <PricingFooter />
       </main>
-      {/* <PricingCardSample /> */}
+      <PricingCardSample />
     </motion.section>
   );
 }
