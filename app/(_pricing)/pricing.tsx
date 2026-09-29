@@ -21,6 +21,7 @@ export default function Pricing() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       id="pricing"
+      viewport={{ once: true, amount: 0.5 }}
     >
       <SectionHeading>Pricing</SectionHeading>
 
@@ -65,7 +66,7 @@ export default function Pricing() {
 
         <PricingFooter />
       </main>
-      <PricingCardSample />
+      {/* <PricingCardSample /> */}
     </motion.section>
   );
 }

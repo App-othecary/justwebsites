@@ -53,7 +53,7 @@ export default function Contact() {
       <SectionHeading>Contact Us</SectionHeading>
 
       <p className="mb-6 text-gray-700 dark:text-gray-300">
-        For more information, email{" "}
+        For more information:{" "}
         <a href="mailto: emilyreyndersdesigns@gmail.com" className="underline">
           emilyreyndersdesigns@gmail.com
         </a>
