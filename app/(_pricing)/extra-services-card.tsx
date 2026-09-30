@@ -29,7 +29,7 @@ export default function ExtraServices({
         scale: scale,
         opacity: opacity,
       }}
-      className=" group mb-8 sm:mb-12"
+      className=" group mb-4 sm:mb-4"
     >
       <section
         className="max-w-2xl overflow-hidden  
@@ -37,7 +37,7 @@ export default function ExtraServices({
           shadow-md hover:bg-mauve-200 transition"
       >
         <div
-          className="pt-2 pb-2 px-5 sm:pt-2 
+          className="pt-2 pb-2 px-2 sm:pt-2 
                              flex flex-col 
                             h-100 
                             sm:h-128
@@ -61,9 +61,11 @@ export default function ExtraServices({
             group-even:group-hover:rotate-1
             "
           />
-          <h3 className="text-2xl font-semibold text-gray-800 mt-2">{title}</h3>
+          <h3 className="text-2xl font-semibold text-gray-800 mt-2 ">
+            {title}
+          </h3>
 
-          <ul className=" ml-2 sm:ml-6  mt-2 ">
+          <ul className=" ml-2 sm:ml-2  mt-2 ">
             {tags.map((tag, index) => (
               <li
                 key={index}

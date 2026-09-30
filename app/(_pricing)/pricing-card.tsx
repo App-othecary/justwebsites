@@ -36,10 +36,10 @@ export default function PricingCard({
       shadow-md hover:bg-mauve-200 transition"
       >
         <div
-          className="pt-2 pb-2 px-5 sm:pt-2 
+          className="pt-2 pb-2 px-5 
                          flex flex-col 
                         h-100 
-                        sm:h-128
+                        
                          lg:h-150
                         "
         >
@@ -53,12 +53,9 @@ export default function PricingCard({
                     right-0 sm:-right-5 
                     rounded-t-lg group-even:right-[initial] group-even:-left-1
                     transition group-hover:scale-105 group-hover:transition-all 
-        group-hover:translate-x-1 
-        group-hover:-translate-y-1 group-hover:-rotate-1
-        group-even:group-hover:translate-x-1
-        group-even:group-hover:translate-y-1 
-        group-even:group-hover:rotate-1
-        "
+                      group-hover:translate-x-1 
+                      group-hover:-translate-y-1 group-hover:-rotate-1
+                      "
           />
           <h3 className="text-2xl font-semibold text-gray-800 mt-2">{title}</h3>
           <p className="tracking-tight text-base/5 text-gray-600">
@@ -78,7 +75,7 @@ export default function PricingCard({
           translate-y-1  group-hover:translate-x-1"
             />
           </div>
-          <ul className=" ml-2 sm:ml-6  mt-2 ">
+          <ul className=" mt-2 ">
             {tags.map((tag, index) => (
               <li // this lists the techstack items
                 key={index}
